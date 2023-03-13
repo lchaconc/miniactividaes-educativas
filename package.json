@@ -1,0 +1,24 @@
+{
+  "name": "miniactividaes-educativas",
+  "version": "1.0.0",
+  "description": "colección de mini actividades educativas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lchaconc/miniactividaes-educativas.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lchaconc/miniactividaes-educativas/issues"
+  },
+  "homepage": "https://github.com/lchaconc/miniactividaes-educativas#readme",
+  "dependencies": {
+    "webpack": "^5.76.1",
+    "webpack-cli": "^5.0.1"
+  }
+}
