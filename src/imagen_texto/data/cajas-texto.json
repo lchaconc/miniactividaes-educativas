@@ -1,0 +1,19 @@
+[
+    {
+       "id": "txtTerrestre",
+        "texto" : "ECOSISTEMA TERRESTRE",
+        "idArea": "terrestre"
+    },
+    {
+        "id": "txtAcuatico",
+        "texto" : "ECOSISTEMA ACUÁTICO",
+        "idArea": "acuatico"
+    },
+    {
+        "id": "txtMixto",
+        "texto" : "ECOSISTEMA MIXTO",
+        "idArea": "mixto"
+    }
+   
+
+]

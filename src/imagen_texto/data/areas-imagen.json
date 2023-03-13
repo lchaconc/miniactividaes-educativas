@@ -1,0 +1,17 @@
+[
+    {
+        "id": "mixto",
+        "alt": "bambú con rio",
+        "archivo": "bambu-rio.jpg"
+    },
+    {
+        "id": "terrestre",
+        "alt": "paisaje de Montañas",
+        "archivo": "montana.jpg"
+    },
+    {
+        "id": "acuatico",
+        "alt": "Fondo marino",
+        "archivo": "mar.jpg"
+    }
+]
