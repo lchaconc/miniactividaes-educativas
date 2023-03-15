@@ -12,7 +12,7 @@ module.exports = ()=> {
   return {
     entry:  `./src/${idApp}/public/scripts/main.js`,
     output: {                
-        path: path.resolve( __dirname,  `build`),
+        path: path.resolve( __dirname,  `dev`),
         filename: "bundle.[contenthash].js"
     },
     mode: "development",

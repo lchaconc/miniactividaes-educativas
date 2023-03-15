@@ -1,1 +1,48 @@
-{"textos":{"titulo":"Título de actividad 2","instrucciones":"Instrucciones de actividad 2","retroCorrecta":"Buena!!!!!","retroIncorrecta":"Mala!!!!!!!!"},"_id":"640653feaf681070506d0557","username":"luis@correo.de","areas":[],"cajas":[],"__v":0}
+{
+  "_id": {
+    "$oid": "640b546aaa5fb1175e76d8b0"
+  },
+  "username": "luis.chacon.campos@mep.go.cr",
+  "areas": [
+    {
+      "titulo": "Bióticos",
+      "backgroundColor": "#4dea39",
+      "color": "#d282e8",
+      "_id": "640b550eaa5fb1175e76d8b4"
+    },
+    {
+      "titulo": "Abióticos",
+      "backgroundColor": "#6282df",
+      "color": "#f35d2b",
+      "_id": "640b5524aa5fb1175e76d8b7"
+    }
+  ],
+  "cajas": [
+    {
+      "id": "elefante.png",
+      "alt": "elefante",
+      "idArea": "640b550eaa5fb1175e76d8b4",
+      "tituloArea": "Biótico",
+      "_id": {
+        "$oid": "640b5537aa5fb1175e76d8be"
+      }
+    },
+    {
+      "id": "desierto.png",
+      "alt": "desierto",
+      "idArea": "640b5524aa5fb1175e76d8b7",
+      "tituloArea": "Abiótico",
+      "_id": {
+        "$oid": "640b5553aa5fb1175e76d8c4"
+      }
+    }
+  ],
+  "__v": 2,
+  "textos": {
+    "titulo": "Aprendamos del ecosistema",
+    "instrucciones": "Arrastra la imagen en el área respectiva",
+    "retroCorrecta": "Muy bien!",
+    "retroIncorrecta": "Inténtalo de nuevo!"
+  },
+  "tipo": "dnd_imagen_area"
+}
