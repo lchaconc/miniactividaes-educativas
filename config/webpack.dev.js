@@ -2,7 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require ("html-webpack-plugin");
 const  CopyPlugin = require("copy-webpack-plugin");
 
-const idApp = "/dnd_imagen_area/";
 
 const ruleForStyles = {
     test: /\.css$/,
@@ -11,13 +10,18 @@ const ruleForStyles = {
 
 const rules = [ruleForStyles]
 
-module.exports = {
-    entry: `./src${idApp}public/scripts/main.js`,
+module.exports = (env)=> {
+    const {idApp} = env;
+
+    console.log(`Iniciando ${idApp} en modo de desarrollo...`);
+
+    return  {
+    entry: `./src${idApp}main.js`,
     output: {
-        path: path.resolve(__dirname,  `dist/${idApp}`),
+        path: path.resolve(__dirname,  `dev/${idApp}`),
         filename: "bundle.[contenthash].js"
     },
-    mode: "production",
+    mode: "development",
     resolve: {
         extensions: [".js", ".json"]
       },
@@ -32,4 +36,6 @@ module.exports = {
         ]
     })
  ]
+}
+
 }

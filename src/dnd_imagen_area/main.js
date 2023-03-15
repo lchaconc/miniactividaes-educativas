@@ -1,8 +1,9 @@
 import * as utils from "./utils";
 import eventHandlers from "./handlers";
-import data from "./data.json";
-import "../css/bootstrap.min.css";
-import "../css/master.css";
+import data from "./data/data.json";
+import "./css/bootstrap.min.css";
+import "./css/master.css";
+
 
 
 const textos = data.textos;

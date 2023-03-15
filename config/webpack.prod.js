@@ -1,8 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require ("html-webpack-plugin");
 const  CopyPlugin = require("copy-webpack-plugin");
+const ZipPlugin = require( "zip-webpack-plugin" );
 
-const idApp = "/dnd_imagen_area/";
 
 const ruleForStyles = {
     test: /\.css$/,
@@ -10,19 +10,26 @@ const ruleForStyles = {
 } 
 
 const rules = [ruleForStyles]
+//const idApp = argv.idApp;
+module.exports = (env) => { 
+    const {idApp} = env;
+    
+    console.log(`Iniciando el empaquetado en modo "PRODUCCIÓN" de la aplicación ${idApp}`);    
 
-module.exports = {
-    entry: `./src${idApp}public/scripts/main.js`,
+
+    return  {
+    entry: `./src${idApp}main.js`,
     output: {
-        path: path.resolve(__dirname,  `dev/${idApp}`),
+        path: path.resolve(__dirname,  `../dist/${idApp}`),
         filename: "bundle.[contenthash].js"
     },
-    mode: "development",
+    mode: "production",
     resolve: {
         extensions: [".js", ".json"]
       },
       module : {rules},
-    plugins: [ new HtmlWebpackPlugin ({
+    plugins: [ 
+    new HtmlWebpackPlugin ({
         title: idApp,
         template: `./src${idApp}public/index.html`,
     }),
@@ -30,6 +37,13 @@ module.exports = {
         patterns: [
             {from: `./src${idApp}/public/assets`, to: "./" }            
         ]
+    }),
+    new ZipPlugin ({
+        path: path.resolve(__dirname, "../zips"),
+        filename: `prod.zip`,
+        extension: "zip",
     })
  ]
+}
+
 }
