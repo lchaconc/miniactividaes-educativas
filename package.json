@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev:dndimg": "webpack serve --config ./config/webpack.dev.js --env idApp=/dnd_imagen_area/",
-    "build:dndimg": "webpack --config ./config/webpack.prod.js --env idApp=/dnd_imagen_area/"
+    "build:dndimg": "webpack --config ./config/webpack.prod.js --env idApp=/dnd_imagen_area/",
+    "dev:dndtxt": "webpack serve --config ./config/webpack.dev.js --env idApp=/imagen_texto/",
+    "build:dndtxt": "webpack --config ./config/webpack.prod.js --env idApp=/imagen_texto/"
   },
   "repository": {
     "type": "git",

@@ -1,7 +1,3 @@
-export async function cargarJson(path) {
-    const res = await fetch (path);
-    return await res.json()    
-}
 
 
 export function eliminarElemento(id) {
@@ -32,7 +28,7 @@ export function renderAreasImg (areas) {
         cardBody.id = area.id;      
 
 
-        img.src = `./assets/${area.archivo}`;
+        img.src = `./${area.archivo}`;
         img.alt = area.alt;
         
                

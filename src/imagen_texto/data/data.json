@@ -1,0 +1,42 @@
+{
+  "textos": {
+    "titulo": "Tipos de Ecosistemas",
+    "instruccion": "Coloca los textos debajo de cada una de las imágenes:",
+    "retroCorrecta": "¡Felicidades! Has completado la actividad de forma correcta.",
+    "retroIncorrecta": "Debes corregir al menos un elemento."
+  },
+  "cajasTexto": [
+    {
+      "id": "txtTerrestre",
+      "texto": "ECOSISTEMA TERRESTRE",
+      "idArea": "terrestre"
+    },
+    {
+      "id": "txtAcuatico",
+      "texto": "ECOSISTEMA ACUÁTICO",
+      "idArea": "acuatico"
+    },
+    {
+      "id": "txtMixto",
+      "texto": "ECOSISTEMA MIXTO",
+      "idArea": "mixto"
+    }
+  ],
+  "areasImagen": [
+    {
+      "id": "mixto",
+      "alt": "bambú con rio",
+      "archivo": "bambu-rio.jpg"
+    },
+    {
+      "id": "terrestre",
+      "alt": "paisaje de Montañas",
+      "archivo": "montana.jpg"
+    },
+    {
+      "id": "acuatico",
+      "alt": "Fondo marino",
+      "archivo": "mar.jpg"
+    }
+  ]
+}
