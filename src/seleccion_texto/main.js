@@ -1,9 +1,9 @@
-import oraciones from "./data/oraciones.js";
-import textos from "./data/textos.js";
 import eventHandler from "./event-handler.js";
+import data from "./data/data.json";
 import "./css/master.css";
 import "animate.css";
 
+const {textos, oraciones } = data;
 
 onload = () => setup();
 

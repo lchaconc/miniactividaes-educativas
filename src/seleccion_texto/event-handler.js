@@ -1,4 +1,3 @@
-
 let retroCorrecta;
 let retroIncorrecta;
 
