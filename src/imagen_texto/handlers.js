@@ -1,4 +1,6 @@
 import {renderTexto} from "./utils.js";
+import Globals from "./globals.js";
+
 let cajas;
 //cantidad de elementos arrastrables. Obtiene el valor length de "cajas":
 let cantItems=0;
@@ -22,10 +24,25 @@ export default function eventHandlers (pCajas, pTextos ) {
 
     box.forEach(item => {
         item.addEventListener("dragstart", handleDrag );
+        item.addEventListener("click", handlePlayAudioBox);
     });
 
     document.getElementById("btnRevisarReiniciar").addEventListener("click", handleConmutador);
     
+}
+
+function handlePlayAudioBox(e) {    
+    const { idArea}= e.target.dataset;        
+    console.log(idArea); 
+    console.log(Globals.audios);
+    Globals.audios.forEach( audio => {
+        console.log(audio.id);
+        if (audio.id === `audio${idArea}` ) {
+            audio.play()    
+        }
+        
+    } )
+
 }
 
 

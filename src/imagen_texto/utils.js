@@ -1,4 +1,4 @@
-
+import Globals from "./globals";
 
 export function eliminarElemento(id) {
     const element = document.getElementById(id);
@@ -52,13 +52,24 @@ export function renderCajasTexto(cajas) {
 
         spnAlert.classList.add ("alert", "alert-info", "box", "text-center" , "card-text" );
         spnAlert.setAttribute("draggable", true); 
-        spnAlert.id = caja.id; 
+        spnAlert.id = caja.id;
+        spnAlert.dataset.idArea = caja.idArea; 
         spnAlert.innerText = caja.texto;
 
         const divColumna = document.createElement("div");
         divColumna.classList.add ("col-sm-4", "mb-3", "text-center");
         divColumna.append(spnAlert);
         divCajasTexto.append(divColumna);
+
+        //Creación del emeneto audio par luego insertarlos enpropiedad audios de Globals
+        // Esto con el fin de cargar dicha varbiale en el manejador de evnetos y reproducir su sonido
+        const tmpAudio  = document.createElement("AUDIO");
+        tmpAudio.setAttribute("src", `${caja.idArea}.mp3`);
+        tmpAudio.setAttribute("id", `audio${caja.idArea}`);
+        tmpAudio.setAttribute("preload", "auto" );
+        Globals.audios.push(tmpAudio);
+
+
     });
     
     
