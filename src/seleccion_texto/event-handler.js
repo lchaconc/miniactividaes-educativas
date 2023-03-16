@@ -33,10 +33,10 @@ function mostrarRetroalimentacion(cantIncorrectas) {
   const divMensaje = document.getElementById("divMensaje");
   const alert = document.createElement("div");
   if (cantIncorrectas <= 0) {
-    alert.classList.add ("alert", "alert-success", "animate__animated", "animate__flip" );
+    alert.classList.add ("alert", "alert-success", "animate__animated", "animate__flipInY" );
     alert.innerText = retroCorrecta;
   } else {
-    alert.classList.add ("alert", "alert-danger", "animate__animated", "animate__jello" );
+    alert.classList.add ("alert", "alert-danger", "animate__animated", "animate__shakeX" );
     alert.innerText = retroIncorrecta;
   }
   divMensaje.innerHTML = ""; 
