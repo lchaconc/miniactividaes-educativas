@@ -87,33 +87,7 @@ const oraciones =
             }                     
 
         ]
-    },
-    {
-        "id": 5,
-        "items": [
-            {
-                "tipo": "oracion",
-                "texto": "La capital de CR es"
-            },
-            {
-                "tipo": "seleccion",
-                "id": "o5s1",
-                "opciones": ["Heredia", "Cartago", "San ´José" ],
-                "correcta": "San ´José"
-            },
-            {
-                "tipo": "oracion",
-                "texto": "y además está"
-            },   
-            {
-                "tipo": "seleccion",
-                "id": "o5s2",
-                "opciones": ["muy bonita", "contaminada" ],
-                "correcta": "contaminada"
-            }                 
-
-        ]
-    }
+    }  
 ]
 
 export default oraciones;

@@ -1,13 +1,17 @@
-import oraciones from "../data/oraciones.js";
-import textos from "../data/textos.js";
-import handlerSetup from "./manejador-eventos.js";
+import oraciones from "./data/oraciones.js";
+import textos from "./data/textos.js";
+import eventHandler from "./event-handler.js";
+import "./css/master.css";
+import "animate.css";
+
+
 onload = () => setup();
 
 function setup() {
   renderTextos();
   document.getElementById("divRoot").innerHTML = "";
   renderOraciones();
-  handlerSetup();
+  eventHandler(textos);
   
 }
 
@@ -38,7 +42,7 @@ function renderItemes(oracion) {
 
     if (item.tipo == "seleccion") {
       const selector = document.createElement("select");
-      selector.classList.add("selector");
+      selector.classList.add("selector", "animate__animated" );
       selector.id = item.id;
       selector.dataset.correcta = item.correcta;
       const defaultValue = document.createElement("option");
