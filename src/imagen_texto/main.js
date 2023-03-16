@@ -2,6 +2,7 @@ import * as utils from "./utils.js";
 import eventHandlers from "./handlers.js";
 import data from "./data/data.json";
 import "./css/master.css";
+import "animate.css";
 
 const textos = data.textos;
 const areasImagen = data.areasImagen;

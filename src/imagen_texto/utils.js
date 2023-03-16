@@ -9,7 +9,7 @@ export function eliminarElemento(id) {
 
 export function renderTexto( elemento, texto, etiqueta, clase ) {    
         document.getElementById( elemento ).innerHTML = 
-        `<${etiqueta}  ${clase ? `class="${clase}"` : ""  }   > ${texto} </${etiqueta}>`    
+        `<${etiqueta}  ${clase ? `class="${clase} animate__animated animate__bounce"` : ""  }   > ${texto} </${etiqueta}>`    
     
 }
 
@@ -22,8 +22,8 @@ export function renderAreasImg (areas) {
         const img = document.createElement("img");        
         const cardBody = document.createElement("div");       
 
-        card.classList.add("col-4", "card" );        
-        img.classList.add (`card-img-top`);
+        card.classList.add("col-4", "card", "animate__animated" );        
+        img.classList.add ( "card-img-top", "area-img" );
         cardBody.classList.add ( "area-drop" );        
         cardBody.id = area.id;      
 
@@ -50,7 +50,7 @@ export function renderCajasTexto(cajas) {
     cajas.forEach(caja => {
         const spnAlert = document.createElement("span");
 
-        spnAlert.classList.add ("alert", "alert-info", "box", "text-center" , "card-text" );
+        spnAlert.classList.add ("alert", "alert-info", "box", "text-center" , "card-text",  "animate__animated" );
         spnAlert.setAttribute("draggable", true); 
         spnAlert.id = caja.id;
         spnAlert.dataset.idArea = caja.idArea; 

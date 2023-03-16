@@ -147,9 +147,9 @@ function revisar () {
         document.getElementById(item.idItem).draggable= false;      
 
         if (item.idArea == item.areaSeleccionada ) {
-            document.getElementById(item.idItem).className = "correcta";                        
+            document.getElementById(item.idItem).classList.add ("correcta", "animate__tada"  ) 
         } else {
-            document.getElementById(item.idItem).className = "incorrecta";
+            document.getElementById(item.idItem).classList.add ("incorrecta", "animate__animated"   )
             cantIncorrectas++            
         }
         console.log(">>>>>", cantIncorrectas );
