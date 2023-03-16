@@ -1,7 +1,6 @@
 import * as utils from "./utils.js";
 import eventHandlers from "./handlers.js";
 import data from "./data/data.json";
-import "./css/bootstrap.min.css";
 import "./css/master.css";
 
 const textos = data.textos;
