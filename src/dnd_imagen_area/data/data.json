@@ -5,14 +5,14 @@
   "username": "luis.chacon.campos@mep.go.cr",
   "areas": [
     {
-      "titulo": "metálicos",
-      "backgroundColor": "#4dea39",
+      "titulo": "Biótico",
+      "backgroundColor": "#FF5733",
       "color": "#d282e8",
       "_id": "640b550eaa5fb1175e76d8b4"
     },
     {
-      "titulo": "Abióticos",
-      "backgroundColor": "#6282df",
+      "titulo": "Abiótico",
+      "backgroundColor": "#900C3F",
       "color": "#f35d2b",
       "_id": "640b5524aa5fb1175e76d8b7"
     }
@@ -34,7 +34,16 @@
       "tituloArea": "Abiótico",
       "_id": {
         "$oid": "640b5553aa5fb1175e76d8c4"
-      }
+      }      
+    },
+    {
+      "id": "cielo.png",
+      "alt": "cielo con nubes",
+      "idArea": "640b5524aa5fb1175e76d8b7",
+      "tituloArea": "Abiótico",
+      "_id": {
+        "$oid": "640b5553aa5fb1175e76d812"
+      }      
     }
   ],
   "__v": 2,
