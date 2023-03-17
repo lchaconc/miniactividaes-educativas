@@ -40,7 +40,7 @@ module.exports = (env) => {
     }),
     new ZipPlugin ({
         path: path.resolve(__dirname, "../zips"),
-        filename: `prod.zip`,
+        filename: idApp,
         extension: "zip",
     })
  ]

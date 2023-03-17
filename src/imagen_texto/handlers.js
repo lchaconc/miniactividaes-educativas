@@ -159,9 +159,9 @@ function revisar () {
     //si encuentra una sola incorrecta despliega mesanje de incorrecto.
     //El texto de carga del json textos
     if (cantIncorrectas <= 0) {
-        renderTexto("divMensaje", textos.retroCorrecta, "p", "alert alert-success"); 
+        renderTexto("divMensaje", textos.retroCorrecta, "p", "alert alert-success animate__animated animate__flipInX"); 
     } else {
-        renderTexto("divMensaje", textos.retroIncorrecta, "p", "alert alert-danger");
+        renderTexto("divMensaje", textos.retroIncorrecta, "p", "alert alert-danger animate__animated animate__bounce");
     }
 
 

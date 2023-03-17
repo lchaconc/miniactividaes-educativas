@@ -10,7 +10,7 @@ export function eliminarElemento(id) {
 
 export function renderTexto( elemento, texto, etiqueta, clase ) {    
         document.getElementById( elemento ).innerHTML = 
-        `<${etiqueta}  ${clase ? `class="${clase} animate__animated animate__bounce"` : ""  }   > ${texto} </${etiqueta}>`    
+        `<${etiqueta}  ${clase ? `class="${clase}"` : ""  }   > ${texto} </${etiqueta}>`    
     
 }
 
