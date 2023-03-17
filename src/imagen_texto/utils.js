@@ -1,5 +1,6 @@
 import Globals from "./globals";
 
+
 export function eliminarElemento(id) {
     const element = document.getElementById(id);
     element.remove();
@@ -50,15 +51,19 @@ export function renderCajasTexto(cajas) {
     cajas.forEach(caja => {
         const spnAlert = document.createElement("span");
 
+        const iSpeaker = document.createElement("img");        
+                        
+
         spnAlert.classList.add ("alert", "alert-info", "box", "text-center" , "card-text",  "animate__animated" );
         spnAlert.setAttribute("draggable", true); 
         spnAlert.id = caja.id;
-        spnAlert.dataset.idArea = caja.idArea; 
-        spnAlert.innerText = caja.texto;
+        spnAlert.dataset.idArea = caja.idArea;                 
+        spnAlert.innerText = `🔊 ${caja.texto}`;        
 
         const divColumna = document.createElement("div");
         divColumna.classList.add ("col-sm-4", "mb-3", "text-center");
-        divColumna.append(spnAlert);
+        
+        divColumna.append(spnAlert);          
         divCajasTexto.append(divColumna);
 
         //Creación del emeneto audio par luego insertarlos enpropiedad audios de Globals
