@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev:dndimg": "webpack serve --config ./config/webpack.dev.js --env idApp=/dnd_imagen_area/",
     "build:dndimg": "webpack --config ./config/webpack.prod.js --env idApp=/dnd_imagen_area/",
-    "dev:dndtxt": "webpack serve --config ./config/webpack.dev.js --env idApp=/imagen_texto/",
-    "build:dndtxt": "webpack --config ./config/webpack.prod.js --env idApp=/imagen_texto/",
+    "dev:dndtxt": "webpack serve --config ./config/webpack.dev.js --env idApp=/dnd_txt_img/",
+    "build:dndtxt": "webpack --config ./config/webpack.prod.js --env idApp=/dnd_txt_img/",
     "dev:seltxt": "webpack serve --config ./config/webpack.dev.js --env idApp=/seleccion_texto/",
     "build:seltxt": "webpack --config ./config/webpack.prod.js --env idApp=/seleccion_texto/"
   },

@@ -6,8 +6,8 @@ import "animate.css";
 
 
 const textos = data.textos;
-const areasImagen = data.areasImagen;
-const cajasTexto = data.cajasTexto;
+const cajasAreas = data.cajasAreas;
+
 
 
 onload =()=> setup();
@@ -15,14 +15,14 @@ onload =()=> setup();
 async function setup() {
   console.log("setup");
   
-  console.log(textos, areasImagen, cajasTexto);
+  //console.log(textos,  cajasAreas);
   
   utils.eliminarElemento("divCargandoDatos");
   utils.renderTexto("divTitulo1", textos.titulo, "h1" );
-  utils.renderTexto("divInstrucciones", textos.instruccion, "p", "alert alert-secondary" );
+  utils.renderTexto("divInstrucciones", textos.instrucciones, "p", "alert alert-secondary" );
   
   
-  utils.renderAreasImg(areasImagen);
-  utils.renderCajasTexto(cajasTexto);
-  eventHandlers(cajasTexto, textos );  
+  utils.renderAreasImg(cajasAreas);
+  utils.renderCajasTexto(cajasAreas);
+  //eventHandlers(cajasAreas, textos );  
 }

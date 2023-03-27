@@ -16,6 +16,9 @@ export function renderTexto( elemento, texto, etiqueta, clase ) {
 
 
 export function renderAreasImg (areas) {
+
+    console.log("areas", areas);
+
     const divAreasImagen = document.getElementById("divAreasImagen");
     areas.forEach(area => {
         //console.log(area);
@@ -29,7 +32,7 @@ export function renderAreasImg (areas) {
         cardBody.id = area.id;      
 
 
-        img.src = `./${area.archivo}`;
+        img.src = `./${area.urlArchivo}`;
         img.alt = area.alt;
         
                
