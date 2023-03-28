@@ -6,19 +6,22 @@
     "cajasAreas": [
       {
         "alt": "Bambú y rio",
-        "urlArchivo": "bambu-rio.jpg",
+        "urlImg": "bambu-rio.jpg",
+        "urlAudio": "bambu-rio",
         "texto": "Mixto",
         "_id":  "641e0d8488b391a051cf17f6"        
       },
       {
         "alt": "Montaña alta",
-        "urlArchivo": "montana.jpg",
+        "urlImg": "montana.jpg",
+        "urlAudio": "montana",
         "texto": "Terrestre",
         "_id":  "641e0f29721f2b7192ef97b3"        
       },
       {
         "alt": "fondo de mar con peces",
-        "urlArchivo": "mar.jpg",
+        "urlImg": "mar.jpg",
+        "urlAudio": "mar",
         "texto": "Acuático",
         "_id":  "641e0f29721f2b7192ef97b3"        
       }
