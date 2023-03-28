@@ -7,23 +7,23 @@
       {
         "alt": "Bambú y rio",
         "urlImg": "bambu-rio.jpg",
-        "urlAudio": "bambu-rio",
+        "urlAudio": "mixto.mp3",
         "texto": "Mixto",
         "_id":  "641e0d8488b391a051cf17f6"        
       },
       {
         "alt": "Montaña alta",
         "urlImg": "montana.jpg",
-        "urlAudio": "montana",
+        "urlAudio": "terrestre.mp3",
         "texto": "Terrestre",
         "_id":  "641e0f29721f2b7192ef97b3"        
       },
       {
         "alt": "fondo de mar con peces",
         "urlImg": "mar.jpg",
-        "urlAudio": "mar",
+        "urlAudio": "acuatico.mp3",
         "texto": "Acuático",
-        "_id":  "641e0f29721f2b7192ef97b3"        
+        "_id":  "641e0f29721f2b7192ef97985"        
       }
     ],    
     "textos": {

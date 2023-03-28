@@ -24,5 +24,5 @@ async function setup() {
   
   utils.renderAreasImg(cajasAreas);
   utils.renderCajasTexto(cajasAreas);
-  //eventHandlers(cajasAreas, textos );  
+  eventHandlers(cajasAreas, textos );  
 }

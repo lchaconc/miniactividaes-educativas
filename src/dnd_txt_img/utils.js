@@ -75,6 +75,9 @@ export function renderCajasTexto(cajas) {
   });
 }
 
-function desordenar(array) {
-  return array.sort(() => Math.random() - 0.5);
+export function desordenar(array) {
+    //Se hace una copia del areglo mediante spread (paso paramátero por valor)
+    //Con el fin de que el primero no se vea afectado
+    const tmp = [...array];
+  return tmp.sort(() => Math.random() - 0.5);
 }
