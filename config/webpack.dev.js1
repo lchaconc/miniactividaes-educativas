@@ -6,25 +6,9 @@ const  CopyPlugin = require("copy-webpack-plugin");
 const ruleForStyles = {
     test: /\.css$/,
     use: ["style-loader", "css-loader"]
-}
+} 
 
-const ruleBabel = {
-    test: /\.(js|jsx)$/,
-    exclude: /node_modules/,
-    use: {
-      loader: "babel-loader",
-      options: {
-        presets: [
-          ["@babel/preset-env", { corejs: 3.29, useBuiltIns: "usage" }],
-          ["@babel/preset-react", { runtime: "automatic" }]
-        ]
-      }
-    }
-  };
-
-
-
-const rules = [ruleForStyles, ruleBabel ]
+const rules = [ruleForStyles]
 
 module.exports = (env)=> {
     const {idApp} = env;
@@ -32,14 +16,14 @@ module.exports = (env)=> {
     console.log(`Iniciando ${idApp} en modo de desarrollo...`);
 
     return  {
-    entry: `./src${idApp}index.js`,
+    entry: `./src${idApp}main.js`,
     output: {
         path: path.resolve(__dirname,  `dev/${idApp}`),
         filename: "bundle.[contenthash].js"
     },
     mode: "development",
     resolve: {
-        extensions: [".js", "jsx", ".json"]
+        extensions: [".js", ".json"]
       },
       module : {rules},
     plugins: [ new HtmlWebpackPlugin ({

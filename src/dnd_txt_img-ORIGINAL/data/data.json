@@ -1,0 +1,35 @@
+{
+    "_id": "641e0c6688b391a051cf17f4",
+    "username": "luis@correo.de",
+    "tipo": "dnd_txt_img",
+    "fechaCreacion": "2023-03-24T20:47:34.771Z",
+    "cajasAreas": [
+      {
+        "alt": "Bambú y rio",
+        "urlImg": "bambu-rio.jpg",
+        "urlAudio": "bambu-rio",
+        "texto": "Mixto",
+        "_id":  "641e0d8488b391a051cf17f6"        
+      },
+      {
+        "alt": "Montaña alta",
+        "urlImg": "montana.jpg",
+        "urlAudio": "montana",
+        "texto": "Terrestre",
+        "_id":  "641e0f29721f2b7192ef97b3"        
+      },
+      {
+        "alt": "fondo de mar con peces",
+        "urlImg": "mar.jpg",
+        "urlAudio": "mar",
+        "texto": "Acuático",
+        "_id":  "641e0f29721f2b7192ef97b3"        
+      }
+    ],    
+    "textos": {
+      "titulo": "Títitulo DND TXT IMG",
+      "instrucciones": "Instruciones de actividad dndtxtimg",
+      "retroCorrecta": "retro correcta",
+      "retroIncorrecta": "retro incorrecta"
+    }
+  }

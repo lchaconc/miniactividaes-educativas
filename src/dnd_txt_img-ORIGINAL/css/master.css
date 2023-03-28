@@ -1,0 +1,78 @@
+.area-drop {    
+	min-height: 6vh; 
+	border: 2px solid bisque;
+	margin-bottom: 0.5em;	
+}
+
+
+.box {
+    cursor: move;
+}
+
+.incorrecta {
+     border: 5px solid red;
+    padding: 2px;    
+}
+
+.correcta {
+    border: 5px solid green;
+    padding: 2px;    
+}
+
+
+.btn-azul {
+	box-shadow: 0px 1px 0px 0px #f0f7fa;
+	background:linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
+	background-color:#33bdef;
+	border-radius:6px;
+	border:1px solid #057fd0;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #5b6178;
+}
+.btn-azul:hover {
+	background:linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
+	background-color:#019ad2;
+}
+.btn-azul:active {
+	position:relative;
+	top:1px;
+}
+
+
+.btn-rojo {
+	box-shadow:inset 0px 39px 0px -24px #e67a73;
+	background-color:#e4685d;
+	border-radius:4px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:6px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #b23e35;
+}
+.btn-rojo:hover {
+	background-color:#eb675e;
+}
+.btn-rojo:active {
+	position:relative;
+	top:1px;
+}
+
+.ico-s {
+	height: 1.5em;
+	width: auto;
+	margin-left: 1%;
+}
+
+
+       
