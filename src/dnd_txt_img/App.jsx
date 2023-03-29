@@ -15,8 +15,8 @@ export default function App() {
   //verifica si renderiza la alerta de retroalimentación
   //además renderiza el btn "reset"
   const [isRetro, setIsRetro] = useState(false);
-  
-//Refeencias de cajas para poder cambiar el estilo del borde en caso incorrecta o correcta
+
+  //Refeencias de cajas para poder cambiar el estilo del borde en caso incorrecta o correcta
   const refCajas = useRef([]);
   //Referencias para deshabilitar el dragable del texto
   const refTextos = useRef([]);
@@ -83,36 +83,42 @@ export default function App() {
       });
     });
 
-
     //contabiliza la cantidad de incorrectas para mostrar las retroalimentaciones:
     res.incorrectas.length === 0 && setIsCorrectas(true);
 
     //instrucción para quitarle el arrastarble para evitar que el usuario las vuelva a acomodar
     //(debe reiniciar la aplicación para poder arrastrarlas nuevamente)
-    refTextos.current.forEach (texto => {
-        console.log(texto.draggable);
-        texto.draggable = false;
-        texto.classList.remove("box")
-    } )
-    
-    //Activa el estado "isRetro" para poder mostrar el alert
-    setIsRetro(true);     
+    refTextos.current.forEach((texto) => {
+      console.log(texto.draggable);
+      texto.draggable = false;
+      texto.classList.remove("box");
+    });
 
+    //Activa el estado "isRetro" para poder mostrar el alert
+    setIsRetro(true);
   };
 
-  const handleReset =()=> {
-    location.reload();     
-  }
+  const handleReset = () => {
+    location.reload();
+  };
 
   return (
     <div className="container">
+      {!cajasAreas && (
+        <div className="row">
+          <div className="col-12 alert alert-info">
+            <h3>Cargando datos. Por favor espere</h3>
+          </div>
+        </div>
+      )}
+
       <div className="row mt-2">
-        <div className="col-12 text-center">
+        <div className="col-12 text-center animate__animated animate__zoomInLeft">
           <h1> {textos && textos.titulo} </h1>
         </div>
       </div>
       <div className="row">
-        <div className="col-12 alert alert-secondary">
+        <div className="col-12 alert alert-secondary animate__animated animate__zoomInRight">
           {textos && textos.instrucciones}
         </div>
       </div>
@@ -133,7 +139,7 @@ export default function App() {
       <div className="row">
         {cajasAreas &&
           cajasAreas.map((item, i) => (
-            <div key={item._id} className="col card pb-2">
+            <div key={item._id} className="col card pb-2 animate__animated animate__fadeIn">
               <img className="img-fluid" src={item.urlImg} alt={item.alt} />
 
               <div
@@ -149,12 +155,12 @@ export default function App() {
 
       <div className="row">
         {desordenadas &&
-          desordenadas.map((item, i ) => (
+          desordenadas.map((item, i) => (
             <div
               key={item._id}
               id={"txt-" + item._id}
               data-id-area={item._id}
-              className="col text-center alert alert-primary box"
+              className="col text-center alert alert-primary box animate__animated animate__backInUp"
               ref={(ref) => (refTextos.current[i] = ref)}
               draggable={true}
               onClick={handleclic}
@@ -173,7 +179,7 @@ export default function App() {
 
       <div className="row mt-4">
         <div className="col-12 text-end">
-          {(isCompletados && !isRetro )  && (
+          {isCompletados && !isRetro && (
             <button
               id="btnRevisarReiniciar"
               title="revisar"
@@ -184,19 +190,11 @@ export default function App() {
             </button>
           )}
 
-          {
-            (isCompletados && isRetro) && (
-                <button 
-                className="btn btn-rojo"
-                onClick={handleReset}
-                >
-                    REINICIAR
-                </button>
-            )
-          }
-
-
-
+          {isCompletados && isRetro && (
+            <button className="btn btn-rojo" onClick={handleReset}>
+              REINICIAR
+            </button>
+          )}
         </div>
       </div>
     </div>
