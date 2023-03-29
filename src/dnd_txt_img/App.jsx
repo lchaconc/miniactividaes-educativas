@@ -10,6 +10,12 @@ export default function App() {
   const [cajasAreas, setCajasAreas] = useState(null);
   const [desordenadas, setDesordenadas] = useState(null);
   const [isCompletados, setIsCompletados] = useState(false);
+  const [isCorrectas, setIsCorrectas] = useState(false);
+
+  //verifica si renderiza la alerta de retroalimentación
+  //además renderiza el btn "reset"
+  const [isRetro, setIsRetro] = useState(false);
+  
 
   const refCajas = useRef([]);
 
@@ -54,27 +60,35 @@ export default function App() {
     e.dataTransfer.setData("texto", e.target.id);
   }
 
-  const handleVerificarCorrectas =()=> {    
-    const res = verificarCorrectas()
-    //ciclo que recorre las referencias y las incorrecta para determianr si hay 
+  const handleVerificarCorrectas = () => {
+    const res = verificarCorrectas();
+    //ciclo que recorre las referencias y las incorrecta para determianr si hay
     //alguna incorrecta y agregarle una clase css "de incorrecta"
-    refCajas.current.forEach ( caja => {
-        console.log(caja.id);
-        res.incorrectas.forEach(item => {
-            //validación si conincide con un elemento incoreto  se agrega una clase css:
-            if (caja.id === item) {
-                caja.setAttribute("class", "incorrecta")
-            }
-        });
+    refCajas.current.forEach((caja) => {
+      console.log(caja.id);
+      res.incorrectas.forEach((item) => {
+        //validación si conincide con un elemento incoreto  se agrega una clase css:
+        if (caja.id === item) {
+          caja.setAttribute("class", "incorrecta");
+        }
+      });
 
-        res.correctas.forEach(item => {
-            //validación si conincide con un elemento incoreto  se agrega una clase css:
-            if (caja.id === item) {
-                caja.setAttribute("class", "correcta")
-            }
-        });
+      res.correctas.forEach((item) => {
+        //validación si conincide con un elemento incoreto  se agrega una clase css:
+        if (caja.id === item) {
+          caja.setAttribute("class", "correcta");
+        }
+      });
+    });
 
-    } )
+    res.incorrectas.length === 0 && setIsCorrectas(true);
+    //Activa el estado "isRetro" para poder mostrar el alert
+    setIsRetro(true);     
+
+  };
+
+  const handleReset =()=> {
+    location.reload();     
   }
 
   return (
@@ -89,15 +103,29 @@ export default function App() {
           {textos && textos.instrucciones}
         </div>
       </div>
+
+      <div className="row">
+        {isRetro && isCorrectas && (
+          <div className="col-12 alert alert-success animate__animated  animate__rubberBand">
+            {textos && textos.retroCorrecta}
+          </div>
+        )}
+        {isRetro && !isCorrectas && (
+          <div className="col-12 alert alert-danger animate__animated animate__bounce">
+            {textos && textos.retroIncorrecta}
+          </div>
+        )}
+      </div>
+
       <div className="row">
         {cajasAreas &&
-          cajasAreas.map((item, i ) => (
+          cajasAreas.map((item, i) => (
             <div key={item._id} className="col card pb-2">
               <img className="img-fluid" src={item.urlImg} alt={item.alt} />
 
               <div
                 id={item._id}
-                ref={(ref) => (refCajas.current[i] = ref)} 
+                ref={(ref) => (refCajas.current[i] = ref)}
                 className="card-body bg-info area-drop"
                 onDragOver={handleAllowDrop}
                 onDrop={handleDrop}
@@ -131,7 +159,7 @@ export default function App() {
 
       <div className="row mt-4">
         <div className="col-12 text-end">
-          {isCompletados && (
+          {(isCompletados && !isRetro )  && (
             <button
               id="btnRevisarReiniciar"
               title="revisar"
@@ -141,6 +169,20 @@ export default function App() {
               REVISAR MI PRÁCTICA
             </button>
           )}
+
+          {
+            (isCompletados && isRetro) && (
+                <button 
+                className="btn btn-rojo"
+                onClick={handleReset}
+                >
+                    REINICIAR
+                </button>
+            )
+          }
+
+
+
         </div>
       </div>
     </div>
