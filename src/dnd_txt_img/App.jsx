@@ -16,8 +16,10 @@ export default function App() {
   //además renderiza el btn "reset"
   const [isRetro, setIsRetro] = useState(false);
   
-
+//Refeencias de cajas para poder cambiar el estilo del borde en caso incorrecta o correcta
   const refCajas = useRef([]);
+  //Referencias para deshabilitar el dragable del texto
+  const refTextos = useRef([]);
 
   useEffect(() => {
     setup();
@@ -81,7 +83,18 @@ export default function App() {
       });
     });
 
+
+    //contabiliza la cantidad de incorrectas para mostrar las retroalimentaciones:
     res.incorrectas.length === 0 && setIsCorrectas(true);
+
+    //instrucción para quitarle el arrastarble para evitar que el usuario las vuelva a acomodar
+    //(debe reiniciar la aplicación para poder arrastrarlas nuevamente)
+    refTextos.current.forEach (texto => {
+        console.log(texto.draggable);
+        texto.draggable = false;
+        texto.classList.remove("box")
+    } )
+    
     //Activa el estado "isRetro" para poder mostrar el alert
     setIsRetro(true);     
 
@@ -136,12 +149,13 @@ export default function App() {
 
       <div className="row">
         {desordenadas &&
-          desordenadas.map((item) => (
+          desordenadas.map((item, i ) => (
             <div
               key={item._id}
               id={"txt-" + item._id}
               data-id-area={item._id}
               className="col text-center alert alert-primary box"
+              ref={(ref) => (refTextos.current[i] = ref)}
               draggable={true}
               onClick={handleclic}
               onDragStart={handleDragStart}
