@@ -160,7 +160,7 @@ export default function App() {
               key={item._id}
               id={"txt-" + item._id}
               data-id-area={item._id}
-              className="col text-center alert alert-primary box animate__animated animate__backInUp"
+              className="col text-center alert alert-primary box animate__animated animate__bounceIn"
               ref={(ref) => (refTextos.current[i] = ref)}
               draggable={true}
               onClick={handleclic}
