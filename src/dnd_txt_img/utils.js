@@ -1,7 +1,9 @@
 //elementos que se sueltan sobre el area
 const soltados = [];
 
-export function ingresarElemento(idItem, areaSeleccionada, cantItemes ) {
+export function ingresarElemento(idItem, areaSeleccionada, cantItemes) {
+  let isCompletados = false;
+
   /*
    proceso de revisión de elementos de la lista
    clausula que indica si hay un elemento en la lista igual al que se va a ingresar lo elimina antes
@@ -18,16 +20,18 @@ export function ingresarElemento(idItem, areaSeleccionada, cantItemes ) {
   soltados.push(tmp);
   console.log("soltados", soltados);
 
-   //verifica longitudes de arreglos para determinar si despliega el botón revisar
-    //En caso de la igualadad significa que todos los elementos están colocados
+  //verifica longitudes de arreglos para determinar si despliega el botón revisar
+  //En caso de la igualadad significa que todos los elementos están colocados
 
-    if (soltados.length == cantItemes) {
-        console.log("Completados!!!!!", soltados.length);        
-    } else {
-        console.log("falta Cantidad:",  soltados.length);
-    }
+  if (soltados.length == cantItemes) {
+    console.log("Completados!!!!!", soltados.length);
+    isCompletados = true;
+  } else {
+    console.log("falta Cantidad:", soltados.length);
+    isCompletados = false;
+  }
 
-
+  return isCompletados;
 }
 
 export function desordenar(array) {

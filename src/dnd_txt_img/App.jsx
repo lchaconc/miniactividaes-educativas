@@ -9,6 +9,7 @@ export default function App() {
   const [textos, setTextos] = useState(null);
   const [cajasAreas, setCajasAreas] = useState(null);
   const [desordenadas, setDesordenadas] = useState(null);
+  const [isCompletados, setIsCompletados] = useState(false);
 
   useEffect(() => {
     setup();
@@ -24,7 +25,7 @@ export default function App() {
     if (cajasAreas) {
       cantItems = cajasAreas.length;
       setDesordenadas(desordenar(cajasAreas));
-    }    
+    }
   }, [cajasAreas]);
 
   const handleclic = (e) => {
@@ -43,7 +44,7 @@ export default function App() {
     e.target.appendChild(document.getElementById(idItem));
     const areaSeleccionada = e.currentTarget.id;
     //console.log("Area seleccionada >>>", areaSeleccionada);
-    ingresarElemento(idItem, areaSeleccionada, cantItems);
+    setIsCompletados(ingresarElemento(idItem, areaSeleccionada, cantItems));
   }
 
   function handleDragStart(e) {
@@ -100,6 +101,20 @@ export default function App() {
               ></audio>
             </div>
           ))}
+      </div>
+
+      <div className="row mt-4">
+        <div className="col-12 text-end">
+          {isCompletados && (
+            <button
+              id="btnRevisarReiniciar"
+              title="revisar"
+              className="btn btn-azul"
+            >
+              REVISAR MI PRÁCTICA
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );
