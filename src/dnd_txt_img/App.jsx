@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import data from "./data/data.json";
-import { desordenar, ingresarElemento } from "./utils";
+import { desordenar, ingresarElemento, verificarCorrectas } from "./utils";
 //cantidad de itemes (cajas) para determinar si ya colocó todos los textos (completado)
 let cantItems = 0;
 
@@ -10,6 +10,8 @@ export default function App() {
   const [cajasAreas, setCajasAreas] = useState(null);
   const [desordenadas, setDesordenadas] = useState(null);
   const [isCompletados, setIsCompletados] = useState(false);
+
+  const refCajas = useRef([]);
 
   useEffect(() => {
     setup();
@@ -52,6 +54,29 @@ export default function App() {
     e.dataTransfer.setData("texto", e.target.id);
   }
 
+  const handleVerificarCorrectas =()=> {    
+    const res = verificarCorrectas()
+    //ciclo que recorre las referencias y las incorrecta para determianr si hay 
+    //alguna incorrecta y agregarle una clase css "de incorrecta"
+    refCajas.current.forEach ( caja => {
+        console.log(caja.id);
+        res.incorrectas.forEach(item => {
+            //validación si conincide con un elemento incoreto  se agrega una clase css:
+            if (caja.id === item) {
+                caja.setAttribute("class", "incorrecta")
+            }
+        });
+
+        res.correctas.forEach(item => {
+            //validación si conincide con un elemento incoreto  se agrega una clase css:
+            if (caja.id === item) {
+                caja.setAttribute("class", "correcta")
+            }
+        });
+
+    } )
+  }
+
   return (
     <div className="container">
       <div className="row mt-2">
@@ -66,12 +91,13 @@ export default function App() {
       </div>
       <div className="row">
         {cajasAreas &&
-          cajasAreas.map((item) => (
+          cajasAreas.map((item, i ) => (
             <div key={item._id} className="col card pb-2">
               <img className="img-fluid" src={item.urlImg} alt={item.alt} />
 
               <div
                 id={item._id}
+                ref={(ref) => (refCajas.current[i] = ref)} 
                 className="card-body bg-info area-drop"
                 onDragOver={handleAllowDrop}
                 onDrop={handleDrop}
@@ -110,6 +136,7 @@ export default function App() {
               id="btnRevisarReiniciar"
               title="revisar"
               className="btn btn-azul"
+              onClick={handleVerificarCorrectas}
             >
               REVISAR MI PRÁCTICA
             </button>

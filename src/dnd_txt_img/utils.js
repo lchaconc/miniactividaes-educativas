@@ -40,3 +40,25 @@ export function desordenar(array) {
   const tmp = [...array];
   return tmp.sort(() => Math.random() - 0.5);
 }
+
+export function verificarCorrectas() {
+  const res = {
+    correctas: [],
+    incorrectas: [],
+  };
+  soltados.forEach(({ idItem, areaSeleccionada }) => {
+    const tmp = idItem.split("-");
+    const id = tmp[1];
+    //console.log(id);
+    //console.log(areaSeleccionada);
+
+    if (id === areaSeleccionada) {
+      res.correctas.push(id);
+    } else {
+      res.incorrectas.push(id);
+    }
+  });
+
+  return res;
+
+}
