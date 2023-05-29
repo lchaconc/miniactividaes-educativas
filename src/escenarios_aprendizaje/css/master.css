@@ -9,6 +9,3 @@ body {
     cursor: pointer;    
   }
 
-  .img-sprite:hover {
-    animation: animate__jackInTheBox;
-  }

@@ -1,6 +1,3 @@
-import React, { useRef } from 'react';
-
-
 import sprites from "./data/data.json";
 
 const container = {
@@ -15,13 +12,19 @@ const container = {
 
 
 
-export default function App () {
-
-    const refSprites = useRef([]);
+export default function App () {  
 
 
-    const animarSprite = ()=> {
-        console.log(refSprites.current);
+    const animarSprite = (e)=> {
+       const actual = e.target;
+       const animacion = actual.dataset.animacion;
+       actual.classList.add( animacion)
+    }
+
+    const removerAnimacion =(e)=> {
+        const actual = e.target;
+        const animacion = actual.dataset.animacion;
+        actual.classList.remove( animacion)
     }
     
     return (
@@ -30,6 +33,9 @@ export default function App () {
                 sprites.map(({id, nombreArchivo, alt, animacion, x, y, h, w}, index ) => (
                     <img 
                     key={id}
+                    id={id}
+                    data-index={index}
+                    data-animacion={animacion}
                     src={nombreArchivo}  
                     alt={alt}
                     style={{
@@ -37,9 +43,10 @@ export default function App () {
                         left: y
                     }}
                     onMouseOver={ animarSprite}
-                    className={ `img-sprite animate` }
-                    ref={elemento => (refSprites.current[index] = elemento)}                  
-                      />
+                    onMouseLeave={removerAnimacion}
+                    className={ "img-sprite animate__animated"}                    
+                    
+                    />
                 ))
             }
                
