@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+
+
+  .img-sprite {
+    position: absolute;
+    cursor: pointer;    
+  }
+
+  .img-sprite:hover {
+    animation: animate__jackInTheBox;
+  }

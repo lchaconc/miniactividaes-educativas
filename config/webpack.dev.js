@@ -32,7 +32,7 @@ module.exports = (env)=> {
     console.log(`Iniciando ${idApp} en modo de desarrollo...`);
 
     return  {
-    entry: `./src${idApp}index.js`,
+    entry:  path.resolve( __dirname, `../src${idApp}index.js` ),
     output: {
         path: path.resolve(__dirname,  `dev/${idApp}`),
         filename: "bundle.[contenthash].js"
@@ -44,11 +44,14 @@ module.exports = (env)=> {
       module : {rules},
     plugins: [ new HtmlWebpackPlugin ({
         title: idApp,
-        template: `./src${idApp}public/index.html`,
+        template:   path.resolve(__dirname, `../src${idApp}public/index.html`),
     }),
     new CopyPlugin ({
         patterns: [
-            {from: `./src${idApp}/public/assets`, to: "./" }            
+            {
+              from:  path.resolve (__dirname, `../src${idApp}/public/assets` ), 
+              to: "./" 
+            }
         ]
     })
  ]

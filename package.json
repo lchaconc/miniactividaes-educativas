@@ -10,7 +10,8 @@
     "dev:dndtxt": "webpack serve --config ./config/webpack.dev.js --env idApp=/dnd_txt_img/",
     "build:dndtxt": "webpack --config ./config/webpack.prod.js --env idApp=/dnd_txt_img/",
     "dev:seltxt": "webpack serve --config ./config/webpack.dev.js --env idApp=/seleccion_texto/",
-    "build:seltxt": "webpack --config ./config/webpack.prod.js --env idApp=/seleccion_texto/"
+    "build:seltxt": "webpack --config ./config/webpack.prod.js --env idApp=/seleccion_texto/",
+    "dev:escapr": "webpack serve --config ./config/webpack.dev.js --env idApp=/escenarios_aprendizaje/"
   },
   "repository": {
     "type": "git",

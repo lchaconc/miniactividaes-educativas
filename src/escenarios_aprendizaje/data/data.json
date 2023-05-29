@@ -1,0 +1,25 @@
+[
+    {
+        "id": "123",
+        "nombreArchivo": "buho.png",
+        "alt": "Buho",
+        "animacion": "animate__jackInTheBox",
+        "x": 80,
+        "y": 20,
+        "h": 15,
+        "w": 15,
+        "z": 200
+    },
+    {
+        "id": "456",
+        "nombreArchivo": "libro.png",        
+        "alt": "libro",
+        "animacion": "animate__heartBeat",
+        "x": 15,
+        "y": 70,
+        "h": 10,
+        "w": 10,
+        "z": 400
+    }
+]
+
