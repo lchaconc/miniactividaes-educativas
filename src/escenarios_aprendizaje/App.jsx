@@ -56,8 +56,10 @@ export default function App() {
             src={nombreArchivo}
             alt={alt}
             style={{
-              top: x,
-              left: y,
+              top: `${y}vh`,
+              left: `${x}vw`,
+              height: `${h}vh`,
+              width: `${w}vw`,
             }}
             onMouseOver={animarSprite}
             onMouseLeave={removerAnimacion}
@@ -80,7 +82,9 @@ export default function App() {
             {tipo === "video" && info && (
               <>
                 <h3>{titulo}</h3>
-                <iframe className="visor-video" src={info}></iframe>
+                <iframe className="visor-video" src={info}
+                autoPlay={true}
+                ></iframe>
                 <p>{detalles}</p>
               </>
             )}
