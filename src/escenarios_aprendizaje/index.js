@@ -1,7 +1,8 @@
-import * as ReactDOMClient from 'react-dom/client';
-import "./css/master.css";
+import * as ReactDOMClient from 'react-dom/client'
+import "./css/master.css"
 import "animate.css"
-import App from './App.jsx';
+import "./css/modal.css"
+import App from './App.jsx'
 
 const container = document.getElementById('root');
 

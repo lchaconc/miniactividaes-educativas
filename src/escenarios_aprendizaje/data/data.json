@@ -20,6 +20,17 @@
         "h": 10,
         "w": 10,
         "z": 400
+    },
+    {
+        "id": "789",
+        "nombreArchivo": "mariposa-1.gif",        
+        "alt": "Mariposa miviendo alas",
+        "animacion": "animate__tada",
+        "x": 30,
+        "y": 64,
+        "h": 10,
+        "w": 10,
+        "z": 400
     }
 ]
 
