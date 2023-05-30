@@ -15,6 +15,7 @@ export default function App() {
   const [tipo, setTipo] = useState(null);
   const [info, setInfo] = useState(null);
   const [detalles, setDetalles] = useState(null);
+  const [titulo, setTitulo] = useState(null);
   const [isModal, setIsModal] = useState(false);
 
   const animarSprite = (e) => {
@@ -34,7 +35,8 @@ export default function App() {
     console.log(sprite);
     setTipo(sprite.tipo);
     setInfo(sprite.info);
-    setDetalles(sprite.detalles)
+    setDetalles(sprite.detalles);
+    setTitulo(sprite.titulo);
     setIsModal(true);
   };
 
@@ -77,25 +79,27 @@ export default function App() {
 
             {tipo === "video" && info && (
               <>
+                <h3>{titulo}</h3>
                 <iframe className="visor-video" src={info}></iframe>
                 <p>{detalles}</p>
               </>
             )}
             {tipo === "audio" && (
               <>
+                <h3>{titulo}</h3>
                 <audio src={info} controls autoPlay>
                   {" "}
                 </audio>
                 <p>{detalles}</p>
               </>
             )}
-    {
-        tipo === "texto" &&
-        <p>
-            {info}
-        </p>
-    }
-    
+            {tipo === "texto" && (
+              <>
+                <h3>{titulo}</h3>
+                <p dangerouslySetInnerHTML={utils.crearHtml(info)}></p>
+                <span>{detalles} </span>
+              </>
+            )}
           </div>
         </div>
       )}
