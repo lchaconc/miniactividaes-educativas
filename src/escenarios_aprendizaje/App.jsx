@@ -1,5 +1,6 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect, useState } from "react";
 import sprites from "./data/data.json";
+import * as utils from "./utils";
 
 const container = {
   backgroundImage: `url("fondo.jpg")`,
@@ -11,8 +12,10 @@ const container = {
 };
 
 export default function App() {
-
-    const refModal = useRef(null);
+  const [tipo, setTipo] = useState(null);
+  const [info, setInfo] = useState(null);
+  const [detalles, setDetalles] = useState(null);
+  const [isModal, setIsModal] = useState(false);
 
   const animarSprite = (e) => {
     const actual = e.target;
@@ -26,53 +29,76 @@ export default function App() {
     actual.classList.remove(animacion, "color-rojo");
   };
 
-  const handleAbrirModal =()=> {        
-    refModal.current.style.display = "block"; 
-  }
+  const handleAbrirModal = (e) => {
+    const sprite = utils.buscarPorId(e.target.id, sprites);
+    console.log(sprite);
+    setTipo(sprite.tipo);
+    setInfo(sprite.info);
+    setDetalles(sprite.detalles)
+    setIsModal(true);
+  };
 
-  const handleCerrarModal =()=> {
-    refModal.current.style.display = "none"; 
-  }
+  const handleCerrarModal = () => {
+    setIsModal(false);
+    setInfo(null);
+  };
 
   return (
     <>
       <div style={container}>
-        {sprites.map(
-          ({ id, nombreArchivo, alt, animacion, x, y, h, w }, index) => (
-            <img
-              key={id}
-              id={id}
-              data-index={index}
-              data-animacion={animacion}
-              src={nombreArchivo}
-              alt={alt}
-              style={{
-                top: x,
-                left: y,
-              }}
-              onMouseOver={animarSprite}
-              onMouseLeave={removerAnimacion}
-              onClick={handleAbrirModal}
-              className={"img-sprite animate__animated"}
-            />
-          )
-        )}
+        {sprites.map(({ id, nombreArchivo, alt, animacion, x, y, h, w }) => (
+          <img
+            key={id}
+            id={id}
+            data-animacion={animacion}
+            src={nombreArchivo}
+            alt={alt}
+            style={{
+              top: x,
+              left: y,
+            }}
+            onMouseOver={animarSprite}
+            onMouseLeave={removerAnimacion}
+            onClick={handleAbrirModal}
+            className={"img-sprite animate__animated"}
+          />
+        ))}
       </div>
-      <div id="modal" className="modal" ref={refModal} >
-        <div className="modal-content">
-          <span 
-          id="btnCloseModal" 
-          className="close"
-          onClick={handleCerrarModal}
-          >
-            &times;
-          </span>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
-          voluptate dolore minima. Ut quis id, soluta delectus hic quam pariatur
-          unde nisi voluptatum, perspiciatis animi ipsum voluptatibus dolores
-          molestias. Quo.
+      {isModal && (
+        <div id="modal" className="modal">
+          <div className="modal-content">
+            <span
+              id="btnCloseModal"
+              className="close"
+              onClick={handleCerrarModal}
+            >
+              &times;
+            </span>
+
+            {tipo === "video" && info && (
+              <>
+                <iframe className="visor-video" src={info}></iframe>
+                <p>{detalles}</p>
+              </>
+            )}
+            {tipo === "audio" && (
+              <>
+                <audio src={info} controls autoPlay>
+                  {" "}
+                </audio>
+                <p>{detalles}</p>
+              </>
+            )}
+    {
+        tipo === "texto" &&
+        <p>
+            {info}
+        </p>
+    }
+    
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 }
