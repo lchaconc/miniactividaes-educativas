@@ -139,7 +139,10 @@ export default function App() {
       <div className="row">
         {cajasAreas &&
           cajasAreas.map((item, i) => (
-            <div key={item._id} className="col card pb-2 animate__animated animate__fadeIn">
+            <div
+              key={item._id}
+              className="col card pb-2 animate__animated animate__fadeIn"
+            >
               <img className="img-fluid" src={item.urlImg} alt={item.alt} />
 
               <div
@@ -167,12 +170,14 @@ export default function App() {
               onDragStart={handleDragStart}
             >
               <h4> {item.texto}</h4>
-              <audio
-                className="audio-player"
-                src={item.urlAudio}
-                preload="auto"
-                controls={true}
-              ></audio>
+              {item.urlAudio && (
+                <audio
+                  className="audio-player"
+                  src={item.urlAudio}
+                  preload="auto"
+                  controls={true}
+                ></audio>
+              )}
             </div>
           ))}
       </div>
