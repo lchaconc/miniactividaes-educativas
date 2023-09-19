@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "colección de mini actividades educativas",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+  "scripts": {    
     "dev:dndimg": "webpack serve --config ./config/webpack.dev.js --env idApp=/dnd_imagen_area/",
     "build:dndimg": "webpack --config ./config/webpack.prod.js --env idApp=/dnd_imagen_area/",
     "dev:dndtxt": "webpack serve --config ./config/webpack.dev.js --env idApp=/dnd_txt_img/",
@@ -12,7 +11,8 @@
     "dev:seltxt": "webpack serve --config ./config/webpack.dev.js --env idApp=/seleccion_texto/",
     "build:seltxt": "webpack --config ./config/webpack.prod.js --env idApp=/seleccion_texto/",
     "dev:escapr": "webpack serve --config ./config/webpack.dev.js --env idApp=/escenarios_aprendizaje/",
-    "build:escapr": "webpack --config ./config/webpack.prod.js --env idApp=/escenarios_aprendizaje/"
+    "build:escapr": "webpack --config ./config/webpack.prod.js --env idApp=/escenarios_aprendizaje/",
+    "dev:audioquestions":"webpack serve --config ./config/webpack.dev.js --env idApp=/audio_questions/"
   },
   "repository": {
     "type": "git",
