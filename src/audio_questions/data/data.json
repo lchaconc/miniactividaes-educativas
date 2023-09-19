@@ -1,0 +1,45 @@
+{
+    "id": "521463987",
+    "username": "luis.chacon.campos@mep.go.cr",
+    "textos": {
+        "titulo": "Select the correct option",
+        "instrucciones": "Instruccions. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, magni iure repudiandae quas quisquam explicabo. ",
+        "retroCorrecta": "Good!!!",
+        "retroIncorrecta": "Too Bad!"
+    },
+    "items": [
+        {
+            "id": "001",
+            "texto": "The Solar System is like a big family in space. At the center, we have the Sun, a bright and hot star. Orbiting around the Sun are eight planets, including our Earth. The closest planets to the Sun are Mercury, Venus, Earth, and Mars. They are called the \"rocky\" or \"terrestrial\" planets. Farther out, we have the \"gas giants\": Jupiter, Saturn, Uranus, and Neptune. Besides planets, there are also moons, asteroids, and comets in our Solar System. All of these objects travel in paths called orbits.",
+            "audio": "solar-system.mp4",
+            "isTexto": true,
+            "preguntas": [
+                {
+                    "id": "p01",
+                    "enunciado": "What is at the center of our Solar System?",
+                    "opciones": ["Moon", "Earth", "Sun"],
+                    "correcta": 2
+                },
+                {
+                    "id": "p02",
+                    "enunciado": "Which of these is NOT a \"rocky\" planet?",
+                    "opciones": ["Venus", "Jupiter", "Mars"],
+                    "correcta": 1
+                },
+                {
+                    "id": "p03",
+                    "enunciado": "How many planets are in our Solar System?",
+                    "opciones": ["Nine", "Seven", "Eight"],
+                    "correcta": 2
+                },
+                {
+                    "id": "p04",
+                    "enunciado": "What do all objects in the Solar System travel in?",
+                    "opciones": ["Roads", "Orbits", "Waves"],
+                    "correcta": 1
+                }
+            ]	
+        }
+    ]
+    
+}
